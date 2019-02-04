@@ -221,27 +221,33 @@ public class TicTacToeModel {
                 }
             }
 
-            if counter == width{
+            if(counter == width){
                 return true;
             }
         }
 
-        //Check diagnol 
+        //Check diagnol 1
+        counter = 0;
         for(int e = 0; e < width; e++){
-            counter = 0;
-            for(int f = 0; f < width; f++){
-                if getMark(e, f-1) == mark{
-                    counter ++;
-                }
+            if(getMark(e, e) == mark){
+                counter++;
             }
 
-            if counter == width{
-                return true;
-            }
         }
 
+        //Check diagnol 2
+        for(int f = 0; f < width; f++){
+            if(getMark(f, width-f-1) == mark){
+                counter++;
+            }
 
-        return false; // remove this line later!
+        }
+
+        if(counter == width){
+            return true;
+        }
+        
+        return false;
 
     }
 	
@@ -250,9 +256,19 @@ public class TicTacToeModel {
         /* Check the squares of the board to see if the game is a tie */
         
         // INSERT YOUR CODE HERE
+        if(isMarkWin(Mark.X) || isMarkWin(Mark.O)){
+            return false;
+        }
 
+        for(int a = 0; a < width; a++){
+            for(int b = 0; b < width; b++){
+                if(getMark(a, b) == Mark.EMPTY){
+                    return false;
+                }
+            }
+        }
 
-        return false; // remove this line later!
+        return true;
         
     }
 
