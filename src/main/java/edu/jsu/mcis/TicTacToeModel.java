@@ -308,14 +308,10 @@ public class TicTacToeModel {
         /* Output the board contents as a string (see examples) */
         
         // INSERT YOUR CODE HERE
-        output.append("\n");
-        output.append("  ");
 
         for(int i = 0; i < width; i++){
             output.append(i);
         }
-
-        output.append("\n");
 
         for(int j = 0; j < width; j++){
             output.append("\n");

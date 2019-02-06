@@ -27,7 +27,7 @@ public class TicTacToeView {
         int col;
 
         if(isXTurn){
-            System.out.println("Player 1 (X) Move.\n Enter the row and column numbers, separated by a space: ");
+            System.out.println("Player 1 (X) Move.\nEnter the row and column numbers, separated by a space: ");
             
             row = Integer.parseInt(keyboard.next());
             col = Integer.parseInt(keyboard.next());
@@ -36,7 +36,7 @@ public class TicTacToeView {
         }
 
         else{
-            System.out.println("Player 2 (O) Move.\n Enter the row and column numbers, separated by a space: ");
+            System.out.println("Player 2 (O) Move.\nEnter the row and column numbers, separated by a space: ");
             
             row = Integer.parseInt(keyboard.next());
             col = Integer.parseInt(keyboard.next());

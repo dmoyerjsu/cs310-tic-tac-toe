@@ -2,7 +2,7 @@ package edu.jsu.mcis;
 
 public class TicTacToe {
     
-    public static final int DEFAULT_WIDTH = 3;
+    public static final int DEFAULT_WIDTH = 7;
     
     public static void main(String[] args) {
         
