@@ -23,21 +23,25 @@ public class TicTacToeView {
         
         // INSERT YOUR CODE HERE
 
-        int row = Integer.parseInt(keyboard.next());
-        int col = Integer.parseInt(keyboard.next());
+        int row;
+        int col;
 
         if(isXTurn){
             System.out.println("Player 1 (X) Move.\n Enter the row and column numbers, separated by a space: ");
             
-            TicTacToeMove moveX = new TicTacToeMove(row, col);
-            return moveX;
+            row = Integer.parseInt(keyboard.next());
+            col = Integer.parseInt(keyboard.next());
+            TicTacToeMove move = new TicTacToeMove(row, col);
+            return move;
         }
 
         else{
             System.out.println("Player 2 (O) Move.\n Enter the row and column numbers, separated by a space: ");
             
-            TicTacToeMove moveO = new TicTacToeMove(row, col);
-            return moveO;
+            row = Integer.parseInt(keyboard.next());
+            col = Integer.parseInt(keyboard.next());
+            TicTacToeMove move = new TicTacToeMove(row, col);
+            return move;
         }
 
     }

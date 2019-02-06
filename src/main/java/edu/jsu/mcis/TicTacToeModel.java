@@ -78,11 +78,11 @@ public class TicTacToeModel {
         
         // INSERT YOUR CODE HERE;
     
-        //for(int i=0; i < width; i++){
-            //for(int n=0; n < width; i++){
-        Arrays.fill(board, Mark.EMPTY);
-            //}
-        //}
+        for(int i=0; i < width; i++){
+            for(int j=0; j < width; j++){
+                board[i][j] = Mark.EMPTY;
+            }
+        }
     }
 	
     public boolean makeMark(int row, int col) {
@@ -113,7 +113,7 @@ public class TicTacToeModel {
             return test;
         }
 
-        return true;
+        return false;
 
         
     }
@@ -123,7 +123,7 @@ public class TicTacToeModel {
         /* Return TRUE if the specified location is within the bounds of the board */
         
         // INSERT YOUR CODE HERE
-        if((row <= width) && (row > 0) && (col <= width) && (col > 0)){
+        if((row < width) && (row >= 0) && (col < width) && (col >= 0)){
             return true;
         }
 
@@ -154,13 +154,8 @@ public class TicTacToeModel {
         /* Return the mark from the square at the specified location */
         
         // INSERT YOUR CODE HERE
-        if(board[row][col] == Mark.X){
-            return Mark.X;
-        }
-
-        else{
-            return Mark.O;
-        }
+        Mark field = board[row][col];
+        return field;
             
     }
 	
@@ -200,14 +195,14 @@ public class TicTacToeModel {
         int counter = 0;
         for(int a = 0; a < width; a++){
             counter = 0;
-             for(int b = 0; b < width; b++){
-                 if(getMark(a, b) == mark){
-                     counter++;
+            for(int b = 0; b < width; b++){
+                if(getMark(a, b) == mark){
+                    counter++;
                  }
              }
 
-             if(counter == width){
-                 return true;
+            if(counter == width){
+                return true;
              }
             
         }
@@ -233,12 +228,21 @@ public class TicTacToeModel {
                 counter++;
             }
 
+            if(counter == width){
+                return true;
+            }
+
         }
 
         //Check diagnol 2
+        counter = 0;
         for(int f = 0; f < width; f++){
-            if(getMark(f, width-f-1) == mark){
+            if(getMark(width-f-1, f) == mark){
                 counter++;
+            }
+
+            if(counter == width){
+                return true;
             }
 
         }
@@ -304,19 +308,25 @@ public class TicTacToeModel {
         /* Output the board contents as a string (see examples) */
         
         // INSERT YOUR CODE HERE
+        output.append("\n");
         output.append("  ");
+
         for(int i = 0; i < width; i++){
             output.append(i);
         }
 
+        output.append("\n");
+
         for(int j = 0; j < width; j++){
-            output.append("  ");
-            output.append(j + "  ");
+            output.append("\n");
+            output.append(j + " ");
 
             for(int k = 0; k < width; k++){
                 output.append(board[j][k]);
             }
         }
+
+        output.append("\n");
 
         return output.toString();
         
