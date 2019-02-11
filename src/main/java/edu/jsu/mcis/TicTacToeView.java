@@ -10,6 +10,7 @@ public class TicTacToeView extends JPanel {
     private final JButton[][] board;
     private final JPanel squaresPanel;
     private final JLabel resultLabel;
+    public int width;
 
     public TicTacToeView(TicTacToeController controller, int width) {
 
@@ -47,11 +48,10 @@ public class TicTacToeView extends JPanel {
         /* Refresh the GUI with updated data from the Model (via the Controller) */
 
         // INSERT YOUR CODE HERE
-        int width = model.getWidth();
 
         for(int i = 0; i < width; i++){
             for(int j = 0; j < width; j++){
-                if(!controller.getMarkAsString(i, j) = mark.EMPTY){
+                if(!(controller.getMarkAsString(i, j) = model.Mark.EMPTY)){
                     board[i][j].setText(controller.getMarkAsString(i, j));
                 }
             }
