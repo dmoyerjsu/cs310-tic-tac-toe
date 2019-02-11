@@ -49,7 +49,13 @@ public class TicTacToeView extends JPanel {
         // INSERT YOUR CODE HERE
         int width = model.getWidth();
 
-        
+        for(int i = 0; i < width; i++){
+            for(int j = 0; j < width; j++){
+                if(!controller.getMarkAsString(i, j) = mark.EMPTY){
+                    board[i][j].setText(controller.getMarkAsString(i, j));
+                }
+            }
+        }
         
 
     }
@@ -59,6 +65,10 @@ public class TicTacToeView extends JPanel {
         /* Disable buttons (to disallow input after game is over) */
     
         // INSERT YOUR CODE HERE
+        for(int i = 0; i < width; i++){
+            for(int j = 0; j < width; j++){
+                board[i][j].setEnabled(false);            }
+        }
         
             
     }
