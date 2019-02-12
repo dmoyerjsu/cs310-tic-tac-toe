@@ -36,6 +36,7 @@ public class TicTacToeView extends JPanel {
             
         }
 
+        this.width = width;
         this.add(squaresPanel);
         this.add(resultLabel);
         
@@ -51,7 +52,7 @@ public class TicTacToeView extends JPanel {
 
         for(int i = 0; i < width; i++){
             for(int j = 0; j < width; j++){
-                if(!(controller.getMarkAsString(i, j) = model.Mark.EMPTY)){
+                if(!(controller.getMarkAsString(i, j) == "-")){
                     board[i][j].setText(controller.getMarkAsString(i, j));
                 }
             }
